@@ -17,3 +17,4 @@ export { default as Notification } from "./Others/Notification";
 export { default as SideBar } from "./Others/SideBar";
 export { default as ThemeSettings } from "./Others/ThemeSettings";
 export { default as UserProfile } from "./Others/UserProfile";
+export { default as NavButton } from "./Others/NavButton";

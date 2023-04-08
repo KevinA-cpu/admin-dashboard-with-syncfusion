@@ -38,7 +38,7 @@ const App = () => {
                 type="button"
                 className="text-3xl p-3 text-white rounded-full"
                 style={{
-                  backgroundColor: "rgba(0, 0, 0, 0.5)",
+                  backgroundColor: "blue",
                 }}
               >
                 <FiSettings />

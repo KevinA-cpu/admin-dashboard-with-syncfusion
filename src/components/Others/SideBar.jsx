@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { SiShopware } from "react-icons/si";
 import { MdOutlineCancel } from "react-icons/md";
@@ -7,10 +7,38 @@ import { links } from "../../data/dummy";
 import { useStateContext } from "../../contexts/ContextProvider";
 
 const SideBar = () => {
-  const { activeMenu, setActiveMenu } = useStateContext();
+  const { activeMenu, setActiveMenu, screenSize, setScreenSize } =
+    useStateContext();
+
+  const handleCloseSideBar = () => {
+    if (activeMenu && screenSize <= 900) {
+      setActiveMenu(false);
+    }
+  };
+
   const activeLink =
     "text-gray-700 dark:text-gray-200 dark:hover:bg-gray-700 hover:text-black hover:bg-light-gray";
   const isActive = true;
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenSize(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [screenSize]);
+
+  useEffect(() => {
+    if (screenSize <= 900) {
+      setActiveMenu(false);
+    } else {
+      setActiveMenu(true);
+    }
+  }, [screenSize]);
+
   return (
     <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10">
       {activeMenu && (
@@ -18,9 +46,7 @@ const SideBar = () => {
           <div className="flex justify-between items-center">
             <Link
               to="/"
-              onClick={() => {
-                setActiveMenu(false);
-              }}
+              onClick={handleCloseSideBar}
               className="items-center gap-3 ml-3 mt-4 flex text-xl 
             font-extrabold tracking-tight dark:text-white text-slate-900"
             >
@@ -46,7 +72,7 @@ const SideBar = () => {
                   <NavLink
                     to={`/${link.name}`}
                     key={link.name}
-                    onClick={() => {}}
+                    onClick={handleCloseSideBar}
                     className={`flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md m-2 ${
                       isActive ? activeLink : "text-white"
                     }`}
