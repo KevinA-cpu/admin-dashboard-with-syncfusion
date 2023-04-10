@@ -5,8 +5,10 @@ import { ContextProvider } from "./contexts/ContextProvider";
 import "./index.css";
 
 ReactDOM.render(
-  <ContextProvider>
-    <App />
-  </ContextProvider>,
+  <React.StrictMode>
+    <ContextProvider>
+      <App />
+    </ContextProvider>
+  </React.StrictMode>,
   document.getElementById("root")
 );

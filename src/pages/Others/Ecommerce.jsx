@@ -1,13 +1,8 @@
 import React from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { GoPrimitiveDot } from "react-icons/go";
-import { Stacked, Pie, Button, SparkLineChart } from "../../components";
-import {
-  earningData,
-  SparklineAreaData,
-  ecomPieChartData,
-} from "../../data/dummy";
-import { useStateContext } from "../../contexts/ContextProvider";
+import { StackedChart, Button, SparkLineChart } from "../../components";
+import { earningData, SparklineAreaData } from "../../data/dummy";
 
 const Ecommerce = () => {
   return (
@@ -19,6 +14,13 @@ const Ecommerce = () => {
               <p className="font-bold text-gray-400">Earnings</p>
               <p className="text-2xl">$90,312,12</p>
             </div>
+            <button
+              type="button"
+              style={{ backgroundColor: "blue" }}
+              className="text-2xl opacity-0.9 text-white hover:drop-shadow-xl rounded-full  p-4"
+            >
+              <BsCurrencyDollar />
+            </button>
           </div>
           <div className="mt-6">
             <Button
@@ -99,14 +101,25 @@ const Ecommerce = () => {
                 <SparkLineChart
                   currentColor="blue"
                   id="line-sparkline"
-                  type="line"
+                  type="Line"
                   height="80px"
                   width="250px"
                   data={SparklineAreaData}
                   color="blue"
                 />
               </div>
+
+              <div className="mt-10">
+                <Button
+                  color="white"
+                  bgColor="blue"
+                  text="Download report"
+                  borderRadius="10px"
+                />
+              </div>
             </div>
+
+            <StackedChart id="charts" width="320px" height="360px" />
           </div>
         </div>
       </div>
