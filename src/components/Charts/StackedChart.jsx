@@ -19,7 +19,7 @@ import {
 const StackedChart = ({ id, width, height }) => {
   return (
     <ChartComponent
-      id={id}
+      id="charts"
       width={width}
       height={height}
       primaryXAxis={stackedPrimaryXAxis}

@@ -119,7 +119,7 @@ const Ecommerce = () => {
               </div>
             </div>
 
-            <StackedChart id="charts" width="320px" height="360px" />
+            <StackedChart width="320px" height="360px" />
           </div>
         </div>
       </div>
