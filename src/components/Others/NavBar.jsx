@@ -10,14 +10,8 @@ import { Cart, Chat, Notification, UserProfile, NavButton } from "../index";
 import { useStateContext } from "../../contexts/ContextProvider";
 
 const NavBar = () => {
-  const {
-    activeMenu,
-    setActiveMenu,
-    isClicked,
-    setIsClicked,
-    handleClick,
-    currentColor,
-  } = useStateContext();
+  const { setActiveMenu, isClicked, handleClick, currentColor } =
+    useStateContext();
 
   return (
     <div className="flex justify-between p-2 md:mx-6 relative">

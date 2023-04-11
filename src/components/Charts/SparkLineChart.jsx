@@ -5,8 +5,6 @@ import {
   SparklineTooltip,
 } from "@syncfusion/ej2-react-charts";
 
-import { useStateContext } from "../../contexts/ContextProvider";
-
 export default class SparkLineChart extends React.PureComponent {
   render() {
     const { sparkkey, data, id, height, width, color, type, currentColor } =
