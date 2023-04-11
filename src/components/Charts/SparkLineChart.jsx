@@ -5,11 +5,16 @@ import {
   SparklineTooltip,
 } from "@syncfusion/ej2-react-charts";
 
-class SparkLineChart extends React.PureComponent {
+import { useStateContext } from "../../contexts/ContextProvider";
+
+export default class SparkLineChart extends React.PureComponent {
   render() {
-    const { id, height, width, color, data, type, currentColor } = this.props;
+    const { sparkkey, data, id, height, width, color, type, currentColor } =
+      this.props;
+
     return (
       <SparklineComponent
+        key={sparkkey}
         id={id}
         height={height}
         width={width}
@@ -35,4 +40,3 @@ class SparkLineChart extends React.PureComponent {
     );
   }
 }
-export default SparkLineChart;

@@ -1,3 +1,11 @@
+# TODO
+
+    Add the rest of the component to store the charts component
+    Add animations
+    Change bg of Apps/Tables Pages
+    Functionalities for chat,notifications,profile,etc...
+    look at the final design and make it look like that
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

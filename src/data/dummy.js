@@ -42,7 +42,6 @@ import product4 from "./product4.jpg";
 import product5 from "./product5.jpg";
 import product6 from "./product6.jpg";
 import product7 from "./product7.jpg";
-import product8 from "./product8.jpg";
 
 export const gridOrderImage = (props) => (
   <div>
@@ -654,7 +653,7 @@ export const earningData = [
     title: "Customers",
     iconColor: "#03C9D7",
     iconBg: "#E5FAFB",
-    pcColor: "red-600",
+    pcColor: "text-red-600",
   },
   {
     icon: <BsBoxSeam />,
@@ -663,7 +662,7 @@ export const earningData = [
     title: "Products",
     iconColor: "rgb(255, 244, 229)",
     iconBg: "rgb(254, 201, 15)",
-    pcColor: "green-600",
+    pcColor: "text-green-600",
   },
   {
     icon: <FiBarChart />,
@@ -672,8 +671,7 @@ export const earningData = [
     title: "Sales",
     iconColor: "rgb(228, 106, 118)",
     iconBg: "rgb(255, 244, 229)",
-
-    pcColor: "green-600",
+    pcColor: "text-green-600",
   },
   {
     icon: <HiOutlineRefresh />,
@@ -682,7 +680,7 @@ export const earningData = [
     title: "Refunds",
     iconColor: "rgb(0, 194, 146)",
     iconBg: "rgb(235, 250, 242)",
-    pcColor: "red-600",
+    pcColor: "text-red-600",
   },
 ];
 

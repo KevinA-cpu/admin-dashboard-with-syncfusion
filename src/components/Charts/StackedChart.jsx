@@ -16,7 +16,10 @@ import {
   stackedPrimaryYAxis,
 } from "../../data/dummy";
 
-const StackedChart = ({ id, width, height }) => {
+import { useStateContext } from "../../contexts/ContextProvider";
+
+const StackedChart = ({ width, height }) => {
+  const { currentMode } = useStateContext();
   return (
     <ChartComponent
       id="charts"
@@ -27,8 +30,9 @@ const StackedChart = ({ id, width, height }) => {
       chartArea={{ border: { width: 0 } }}
       tooltip={{ enable: true }}
       legendSettings={{
-        background: "white",
+        background: currentMode === "dark" ? "#9ca3af" : "white",
       }}
+      background={currentMode === "dark" ? "#33373E" : "white"}
     >
       <Inject services={[Legend, Category, StackingColumnSeries, Tooltip]} />
       <SeriesCollectionDirective>

@@ -7,7 +7,7 @@ import { links } from "../../data/dummy";
 import { useStateContext } from "../../contexts/ContextProvider";
 
 const SideBar = () => {
-  const { activeMenu, setActiveMenu, screenSize, setScreenSize } =
+  const { activeMenu, setActiveMenu, screenSize, setScreenSize, currentColor } =
     useStateContext();
 
   const handleCloseSideBar = () => {
@@ -29,7 +29,7 @@ const SideBar = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [screenSize]);
+  }, [screenSize, setScreenSize]);
 
   useEffect(() => {
     if (screenSize <= 900) {
@@ -37,7 +37,7 @@ const SideBar = () => {
     } else {
       setActiveMenu(true);
     }
-  }, [screenSize]);
+  }, [screenSize, setActiveMenu]);
 
   return (
     <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10">
@@ -72,6 +72,9 @@ const SideBar = () => {
                   <NavLink
                     to={`/${link.name}`}
                     key={link.name}
+                    style={({ isActive }) => ({
+                      backgroundColor: isActive ? currentColor : "",
+                    })}
                     onClick={handleCloseSideBar}
                     className={`flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md m-2 ${
                       isActive ? activeLink : "text-white"
